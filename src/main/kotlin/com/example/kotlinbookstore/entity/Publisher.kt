@@ -1,6 +1,6 @@
 package com.example.kotlinbookstore.entity
 
-import jakarta.persistence.*
+import javax.persistence.*
 
 @Entity
 data class Publisher (

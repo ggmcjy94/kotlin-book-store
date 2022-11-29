@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "3.0.0"
+	id("org.springframework.boot") version "2.7.6"
 	id("io.spring.dependency-management") version "1.1.0"
 	kotlin("jvm") version "1.7.21"
 	kotlin("plugin.spring") version "1.7.21"
@@ -46,7 +46,6 @@ dependencies {
 	runtimeOnly("com.h2database:h2")
 
 	// database-querydsl
-	implementation("com.querydsl:querydsl-core:5.0.0")
 	implementation("com.querydsl:querydsl-jpa:5.0.0")
 	kapt("com.querydsl:querydsl-apt:5.0.0:jpa")
 
@@ -67,3 +66,4 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+

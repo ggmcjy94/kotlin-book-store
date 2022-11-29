@@ -8,7 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing
 @SpringBootApplication
 @EnableJpaAuditing
 @ConfigurationPropertiesScan
-class KotlinBookStoreApplication
+class KotlinBookStoreApplication {
+}
 
 fun main(args: Array<String>) {
 	runApplication<KotlinBookStoreApplication>(*args)
