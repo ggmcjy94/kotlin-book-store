@@ -11,7 +11,7 @@ data class Book(
     val title : String,
 
     @OneToMany(mappedBy = "book", cascade = [CascadeType.ALL], orphanRemoval = true)
-    val books: List<BookAuthor>,
+    val authors: List<BookAuthor>,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "publisher_id")

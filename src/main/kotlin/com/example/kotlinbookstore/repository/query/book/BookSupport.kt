@@ -1,4 +1,4 @@
-package com.example.kotlinbookstore.repository.query
+package com.example.kotlinbookstore.repository.query.book
 
 import com.example.kotlinbookstore.entity.Book
 

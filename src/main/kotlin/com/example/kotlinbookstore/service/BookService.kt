@@ -9,6 +9,5 @@ class BookService(private val bookRepository: BookRepository){
 
     fun getBooks(){
         val books = bookRepository.getAllBooks()
-
     }
 }
