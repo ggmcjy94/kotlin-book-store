@@ -8,12 +8,12 @@ import javax.persistence.*
 data class Author(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id : Long,
-
-    val name : String,
-
-    @OneToMany(mappedBy = "author", cascade = [CascadeType.ALL], orphanRemoval = true)
-    val books: List<BookAuthor>
+    val id: Long,
+    val name: String,
 
 ) : BaseTimeEntity() {
+
+    @OneToMany(mappedBy = "author", cascade = [CascadeType.ALL], orphanRemoval = true)
+    val books: List<BookAuthor> = listOf()
+
 }

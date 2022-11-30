@@ -15,5 +15,6 @@ data class BookAuthor (
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     val author: Author
-        ): BaseTimeEntity (){
+
+    ): BaseTimeEntity (){
 }
