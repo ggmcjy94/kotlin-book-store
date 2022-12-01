@@ -3,14 +3,12 @@ package com.example.kotlinbookstore.service
 import com.example.kotlinbookstore.dto.AuthorDTO
 import com.example.kotlinbookstore.entity.Author
 import com.example.kotlinbookstore.repository.AuthorRepository
-import com.example.kotlinbookstore.utils.mapper.AuthorMapper
 import com.example.kotlinbookstore.web.request.AuthorCreateRequest
 import org.springframework.stereotype.Service
 
 @Service
 class AuthorService(
-    private val authorRepository: AuthorRepository,
-    private val authorMapper: AuthorMapper
+    private val authorRepository: AuthorRepository
 ) {
 
     fun createAuthor(request : AuthorCreateRequest) : AuthorDTO {

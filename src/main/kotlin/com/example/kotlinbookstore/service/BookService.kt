@@ -1,5 +1,6 @@
 package com.example.kotlinbookstore.service
 
+import com.example.kotlinbookstore.dto.AuthorDTO
 import com.example.kotlinbookstore.dto.BookDTO
 import com.example.kotlinbookstore.entity.Book
 import com.example.kotlinbookstore.entity.BookAuthor
@@ -30,13 +31,12 @@ class BookService(private val bookRepository: BookRepository,
 
         bookAuthorRepository.save(BookAuthor(id=-1, book = savedBook , author = author))
 
-        return BookDTO(savedBook.id, savedBook.title, author.name, publisher.name)
+        return BookDTO(savedBook.id, savedBook.title, listOf(author).stream().map { it -> AuthorDTO(it.id, it.name, null) }.toList(), publisher.name)
     }
 
     fun getBook(id: Long): BookDTO {
         val book = findById(id)
-        val bookAuthor = bookAuthorRepository.findByBookId(book.id)
-        return BookDTO(book.id,book.title, bookAuthor.author.name, book.publisher.name)
+        return BookDTO(book.id,book.title, book.authors.stream().map { AuthorDTO(it.author.id, it.author.name, null) }.toList() , book.publisher.name)
     }
 
 
